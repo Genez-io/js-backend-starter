@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 @GenezioDeploy()
 export class BackendService {
-  async hello(name) {
+  async hello(name): Promise<string> {
     const ipLocation = await fetch("http://ip-api.com/json/")
       .then((res) => res.json())
       .catch(() => ({ status: "fail" }));
